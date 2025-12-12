@@ -7,8 +7,8 @@ class Solution:
         right = total
         left = 0
         for n in range(len(nums)-1):
-            right += nums[n]
-            left -= nums[n]
+            right -= nums[n]
+            left += nums[n]
             if (left - right) % 2 == 0:
                 noPart += 1
         return noPart 
