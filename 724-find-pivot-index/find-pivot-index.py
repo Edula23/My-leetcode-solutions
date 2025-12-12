@@ -12,11 +12,9 @@ class Solution:
             elif i == len(nums) - 1:
                 rightS = 0
                 leftS = total - nums[len(nums)-1]
-                print(leftS)
             else:
                 leftS += nums[i-1]
                 rightS -= nums[i]
-                print(rightS)
             if rightS == leftS:
                 return i
         return -1
