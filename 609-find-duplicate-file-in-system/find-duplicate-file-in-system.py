@@ -45,18 +45,6 @@ class Solution:
             if len(res) != 1:   
                 result.append(res)
         return result
-                    
-
-
-
-
-
-
-
-            
-
-        
-        print(mp)
                 
                 
             
