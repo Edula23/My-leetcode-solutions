@@ -1,24 +1,24 @@
 import random
-class RandomizedSet:
+class RandomizedSet:    
     def __init__(self):
-        self.randmset = set()
+        self.count = defaultdict(int)
     def insert(self, val: int) -> bool:
-        if val not in self.randmset:
-            self.randmset.add(val)
-            return True
-        else:            
-            return False
-    def remove(self, val: int) -> bool:
-        if val not in self.randmset:
+        if self.count[val] > 0 :
             return False
         else:
-            self.randmset.remove(val)            
-            return True 
+            self.count[val] += 1
+            return True
+    def remove(self, val: int) -> bool:
+        if self.count[val] > 0:
+            self.count[val] -= 1
+            return True
+        else:          
+            return False 
     def getRandom(self) -> int:
-        self.randlist = list(self.randmset)
-        n = len(self.randlist)-1
+        self.val = [i for i in self.count.keys() if self.count[i] > 0]
+        n = len(self.val)-1
         ranInt = random.randint(0, n)
-        return self.randlist[ranInt]
+        return self.val[ranInt]
 
         
 
