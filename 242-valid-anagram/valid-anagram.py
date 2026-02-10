@@ -5,8 +5,4 @@ class Solution:
         dit = Counter(t)
         if len(s) != len(t):
             return False
-        for ch in t:
-            # if ch not in di or t.count(ch) != di[ch]  :
-            if dit[ch] != dis[ch]:
-                return False
-        return True
+        return dis == dit
