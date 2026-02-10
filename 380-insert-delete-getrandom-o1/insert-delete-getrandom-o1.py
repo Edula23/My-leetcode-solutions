@@ -2,23 +2,29 @@ import random
 class RandomizedSet:    
     def __init__(self):
         self.count = defaultdict(int)
+        self.random = defaultdict(int)
+        self.thelist = []
     def insert(self, val: int) -> bool:
         if self.count[val] > 0 :
             return False
         else:
             self.count[val] += 1
+            self.thelist.append(val)
             return True
     def remove(self, val: int) -> bool:
         if self.count[val] > 0:
             self.count[val] -= 1
+            self.count.pop(val)
+            self.thelist.remove(val)
             return True
         else:          
             return False 
     def getRandom(self) -> int:
-        self.val = [i for i in self.count.keys() if self.count[i] > 0]
-        n = len(self.val)-1
-        ranInt = random.randint(0, n)
-        return self.val[ranInt]
+        n = len(self.thelist) - 1
+        return random.choice(self.thelist)
+
+
+        
 
         
 
