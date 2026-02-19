@@ -1,0 +1,10 @@
+class Solution:
+    def maxCoins(self, piles: List[int]) -> int:
+        piles.sort()
+        res = 0
+        for i in range(-2, -(len(piles) - (len(piles) // 3) + 1), -2):
+            res += piles[i]
+        return res
+
+
+
