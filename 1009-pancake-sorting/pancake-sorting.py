@@ -3,7 +3,6 @@ class Solution:
         res = []
         maxx = 0
         n = len(arr)
-        sortedd = False
         new_arr = arr[0:n]
         while n > 1:
             new_arr = new_arr[0:n]
