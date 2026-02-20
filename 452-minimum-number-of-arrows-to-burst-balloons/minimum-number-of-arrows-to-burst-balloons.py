@@ -5,13 +5,13 @@ class Solution:
         minn = points[0][0]
         maxx  = points[0][1]
         for i in range(1, len(points)):
-            if points[i][0] > minn and points[i][0] < maxx:
-                minn = points[i][0]
             if points[i][1] < maxx and points[i][1] > minn:
                 maxx = points[i][1]
-            if points[i][0] > maxx:
+            if points[i][0] > minn and points[i][0] < maxx:
+                minn = points[i][0]
+            elif points[i][0] > maxx:
                 minn =  points[i][0]
                 maxx = points[i][1]
-                arrows += 1
+                arrows += 1            
         return arrows
 
