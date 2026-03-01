@@ -1,10 +1,14 @@
 class Solution:
   def moveZeroes(self, nums: list[int]) -> None:
-    j = 0
-    for num in nums:
-      if num != 0:
-        nums[j] = num
-        j += 1
-
-    for i in range(j, len(nums)):
-      nums[i] = 0
+    holder = 0
+    seeker = 0
+    while seeker < len(nums):
+        if nums[seeker] != 0:
+            nums[seeker], nums[holder] = nums[holder] , nums[seeker]
+            holder+=1
+        seeker+=1
+        
+        
+        
+            
+        
